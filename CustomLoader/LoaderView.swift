@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoaderView: View {
+    var accentColor: Color
     var body: some View {
         
         ZStack{
@@ -15,12 +16,12 @@ struct LoaderView: View {
             VStack{
                 ProgressView()
                     .controlSize(.large)
-                    .tint(.cyan)
+                    .tint(accentColor)
                     .frame(width: 50, height: 50, alignment: .center)
                     .aspectRatio(contentMode: .fill)
                 Text("Loading...")
                     .bold()
-                    .foregroundColor(.cyan)
+                    .foregroundColor(accentColor)
             }.frame(width: 140,height: 120)
                 .cornerRadius(16)
                 .background(.ultraThinMaterial)
@@ -32,7 +33,7 @@ struct LoaderView: View {
 
 struct LoaderView_Previews: PreviewProvider {
     static var previews: some View {
-        LoaderView()
+        LoaderView(accentColor: .red)
     }
 }
 

@@ -27,7 +27,7 @@ struct ContentView: View {
                 .background(Color.red)
             
             if loaderVM.showLoader {
-                LoaderView()
+                LoaderView(accentColor: .white)
             }
         }.onAppear(perform: loaderCheck)
     }
